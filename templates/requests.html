@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Maintenance Requests</h2>
+<a href="/add_request">Add Request</a>
+<table>
+<tr><th>ID</th><th>Asset</th><th>Technician</th><th>Issue</th><th>Status</th></tr>
+{% for req in requests %}
+<tr>
+<td>{{ req.request_id }}</td>
+<td>{{ req.asset_name }}</td>
+<td>{{ req.technician_name }}</td>
+<td>{{ req.issue_description }}</td>
+<td>{{ req.repair_status }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

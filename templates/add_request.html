@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add Request</h2>
+<form method="post">
+<select name="asset_id">{% for asset in assets %}<option value="{{ asset.asset_id }}">{{ asset.asset_name }}</option>{% endfor %}</select>
+<select name="technician_id">{% for tech in technicians %}<option value="{{ tech.technician_id }}">{{ tech.technician_name }}</option>{% endfor %}</select>
+<textarea name="issue_description" required></textarea>
+<input type="date" name="request_date" required>
+<input type="text" name="repair_status" required>
+<button type="submit">Submit</button>
+</form>
+{% endblock %}

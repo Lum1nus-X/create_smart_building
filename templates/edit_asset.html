@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Edit Asset</h2>
+<form method="post">
+<input type="text" name="asset_name" value="{{ asset.asset_name }}" required>
+<input type="text" name="category" value="{{ asset.category }}" required>
+<select name="room_id">{% for room in rooms %}<option value="{{ room.room_id }}" {% if room.room_id == asset.room_id %}selected{% endif %}>{{ room.room_name }}</option>{% endfor %}</select>
+<input type="date" name="purchase_date" value="{{ asset.purchase_date }}" required>
+<input type="text" name="status" value="{{ asset.status }}" required>
+<button type="submit">Update</button>
+</form>
+{% endblock %}

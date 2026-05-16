@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Assets</h2>
+<a href="/add_asset">Add Asset</a>
+<table>
+<tr><th>ID</th><th>Name</th><th>Category</th><th>Room</th><th>Status</th><th>Actions</th></tr>
+{% for asset in assets %}
+<tr>
+<td>{{ asset.asset_id }}</td>
+<td>{{ asset.asset_name }}</td>
+<td>{{ asset.category }}</td>
+<td>{{ asset.room_name }}</td>
+<td>{{ asset.status }}</td>
+<td><a href="/edit_asset/{{ asset.asset_id }}">Edit</a> <a href="/delete_asset/{{ asset.asset_id }}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

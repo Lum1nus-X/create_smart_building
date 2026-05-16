@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Dashboard</h2>
+<div class="cards">
+<div class="card">Buildings: {{ building_count }}</div>
+<div class="card">Assets: {{ asset_count }}</div>
+<div class="card">Pending: {{ pending_count }}</div>
+<div class="card">Completed: {{ completed_count }}</div>
+</div>
+<table>
+<tr><th>ID</th><th>Asset</th><th>Issue</th><th>Status</th></tr>
+{% for r in recent_requests %}
+<tr><td>{{ r.request_id }}</td><td>{{ r.asset_name }}</td><td>{{ r.issue_description }}</td><td>{{ r.repair_status }}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}
